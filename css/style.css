@@ -257,13 +257,9 @@ section {
   color: var(--light-color);
 }
 
-.side-bar .navbar {
-  margin-top: 1rem;
-}
-
 .side-bar .navbar a {
   display: block;
-  padding: 1.5rem;
+  padding: 2rem;
   margin: 0.5rem 0;
   font-size: 1.8rem;
 }
