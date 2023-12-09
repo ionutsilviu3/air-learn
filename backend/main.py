@@ -1,7 +1,7 @@
 from model import db, Video, Course
 from flask import Flask, render_template, jsonify
 
-app = Flask(__name__, template_folder='../templates', static_folder='static')
+app = Flask(__name__, template_folder='../templates', static_folder='../images')
 
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///airlearn.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False  # Disable modification tracking as it is not needed for this example
@@ -49,24 +49,15 @@ if __name__ == '__main__':
 
         # Populate the database with sample data
         course1 = Course(
-            tutor_image_url='path/to/tutor1_image.jpg',
-            tutor_name='John Doe',
-            tutor_date='21-25-2022',
-            course_thumbnail_url='path/to/course1_thumbnail.jpg',
+            tutor_image_url='download.jpg',
+            tutor_name='Costel Aldea',
+            tutor_date='21-11-2023',
+            course_thumbnail_url='thumbnail.jpg',
             course_title='Complete HTML Tutorial',
             course_playlist_url='/playlist/course1'
         )
-        course2 = Course(
-            tutor_image_url='path/to/tutor2_image.jpg',
-            tutor_name='Jane Doe',
-            tutor_date='26-30-2022',
-            course_thumbnail_url='path/to/course2_thumbnail.jpg',
-            course_title='Complete CSS Tutorial',
-            course_playlist_url='/playlist/course2'
-        )
 
         db.session.add(course1)
-        db.session.add(course2)
         db.session.commit()
     
     app.run(debug=True)
