@@ -96,5 +96,15 @@
     object-fit: cover;
 }
 
+.reviews .box-container .box .user h3{
+    font-size: 2rem;
+    color: var(--black);
+}
+.reviews .box-container .box .user .stars i{
+    color: var(--light-color);
+}
+
+
+
 
 
