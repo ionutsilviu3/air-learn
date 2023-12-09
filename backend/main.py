@@ -1,23 +1,40 @@
-from flask import Flask, render_template
+from model import db, Video
+from flask import Flask, render_template, jsonify
 
-app = Flask(__name__)
+app = Flask(__name__, template_folder='templates', static_folder='static')
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///videos.db'
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False  # Disable modification tracking as it is not needed for this example
 
-# Sample data (replace with your actual data)
-courses = [
-    {"id": 1, "title": "Introduction to Programming", "videos": ["video1.mp4", "video2.mp4"]},
-    {"id": 2, "title": "Web Development Basics", "videos": ["video3.mp4", "video4.mp4"]},
-]
+db.init_app(app)
 
-@app.route('/')
+# Create tables when the application starts (only for development)
+with app.app_context():
+    db.create_all()
+
+@app.route('/api/videos', methods=['GET'])
+def get_all_videos():
+    new_video = Video.add_video(
+    title='Introduction to Flask',
+    description='Learn the basics of Flask web framework.',
+    thumbnail_url='/images/thumbnail.jpg',
+    video_url='/videos/video.mp4'
+)
+    
+    videos = Video.query.all()
+    return jsonify([video.serialize() for video in videos])
+   
+@app.route('/') 
+@app.route('/home.html')
 def index():
-    return render_template('index.html', courses=courses)
+    return render_template('home.html')
 
-@app.route('/course/<int:course_id>')
-def course(course_id):
-    course = next((c for c in courses if c["id"] == course_id), None)
-    if course:
-        return render_template('course.html', course=course)
-    return "Course not found", 404
+@app.route('/about.html')
+def about():
+    return render_template("about.html")
+
+@app.route('/courses.html')
+def courses():
+    return render_template("courses.html")
 
 if __name__ == '__main__':
     app.run(debug=True)
