@@ -2,6 +2,15 @@ from flask_sqlalchemy import SQLAlchemy
 
 db = SQLAlchemy()
 
+class Course(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    tutor_image_url = db.Column(db.String(255))
+    tutor_name = db.Column(db.String(100))
+    tutor_date = db.Column(db.String(20))
+    course_thumbnail_url = db.Column(db.String(255))
+    course_title = db.Column(db.String(100))
+    course_playlist_url = db.Column(db.String(100))
+
 class Video(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(255), nullable=False)
