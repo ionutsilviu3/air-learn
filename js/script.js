@@ -2,6 +2,8 @@ let body = document.body;
 let profile = document.querySelector('.header .flex .profile');
 let searchForm = document.querySelector('.header .flex .search-form'); // Define searchForm here
 let sideBar = document.querySelector('.side-bar');
+let toggleBtn = document.querySelector('#toggle-btn');
+let darkMode = localStorage.getItem('dark-mode');
 
 document.querySelector('#user-btn').onclick = () => {
   profile.classList.toggle('active');
@@ -30,24 +32,17 @@ window.onscroll = () => {
   }
 };
 
-
-/*dark mode */
-
-let toggleBtn = document.querySelector('#toggle-btn');
-let body = document.body; // Assuming you have a variable named 'body' defined somewhere in your code
-let darkMode = localStorage.getItem('dark-mode');
-
 const enableDarkMode = () => {
   toggleBtn.classList.replace('fa-sun', 'fa-moon');
-  body.classList.add("dark");
+  body.classList.add('dark');
   localStorage.setItem('dark-mode', 'enabled');
-}
+};
 
 const disableDarkMode = () => {
   toggleBtn.classList.replace('fa-moon', 'fa-sun');
-  body.classList.remove("dark"); // Change add to remove
+  body.classList.remove('dark'); // Change add to remove
   localStorage.setItem('dark-mode', 'disabled');
-}
+};
 
 if (darkMode === 'enabled') {
   enableDarkMode();
@@ -60,4 +55,4 @@ toggleBtn.onclick = () => {
   } else {
     disableDarkMode();
   }
-}
+};
