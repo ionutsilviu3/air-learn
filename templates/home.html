@@ -12,13 +12,15 @@
     />
 
     <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/style_about.css" />
+    <link rel="stylesheet" href="/css/style_courses.css" />
   </head>
 
   <body>
     <!-- header starts here -->
     <header class="header">
       <section class="flex">
-        <a href="home.html" class="logo"> Air Learn </a>
+        <a href="home.html" class="logo" id="who"> Air Learn </a>
         <form action="" method="post" class="search-form">
           <input
             type="text"
@@ -88,6 +90,61 @@
 
     <!-- side bar section starts here -->
 
+    <section class="quick-select">
+      <h1 class="heading">quick options</h1>
+
+      <div class="box-container">
+        <div class="box">
+          <h3 class="title">likes and comments</h3>
+          <p>total likes:<span>14</span></p>
+          <a href="#" class="inline-btn">view likes</a>
+          <p>total comments:<span>5</span></p>
+          <a href="#" class="inline-btn">view comments</a>
+          <p>total playlist:<span>3</span></p>
+          <a href="#" class="inline-btn">view playlists</a>
+        </div>
+
+        <div class="box tutor">
+          <h3 class="title">become a tutor</h3>
+          <p>
+            Lorem ipsum dolar sit amet consectetur adipisicing elit.Accusantium
+            sunt, nulla voluptatum quas mollitia sint.
+          </p>
+          <a href="register.html" class="inline-btn"> get started</a>
+        </div>
+
+        <div class="box">
+          <h3 class="title">Top Categories</h3>
+          <div class="flex">
+            <a href="#"><i class="fas fa-code"></i><span>development</span></a>
+            <a href="#"
+              ><i class="fas fa-chart-simple"></i><span>business</span></a
+            >
+            <a href="#"><i class="fas fa-pen"></i><span>design</span></a>
+            <a href="#"
+              ><i class="fas fa-chart-line"></i><span>marketing</span></a
+            >
+            <a href="#"><i class="fas fa-music"></i><span>music</span></a>
+            <a href="#"><i class="fas fa-camera"></i><span>photogra</span></a>
+          </div>
+        </div>
+
+        <div class="box">
+          <h3 class="title">Popular Topics</h3>
+          <div class="flex">
+            <a href="#"><i class="fas fa-html5"></i><span>HTML</span></a>
+            <a href="#"><i class="fas fa-css3"></i><span>CSS</span></a>
+            <a href="#"><i class="fas fa-js"></i><span>JavaScript</span></a>
+            <a href="#"><i class="fas fa-react"></i><span>react</span></a>
+            <a href="#"><i class="fas fa-php"></i><span>PHP</span></a>
+            <a href="#"
+              ><i class="fas fa-bootstrap"></i><span>bootstrap</span></a
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- footer session starts here -->
 
     <footer class="footer">
@@ -98,6 +155,6 @@
     <!-- footer session ends here -->
 
     <!-- custom js file link -->
-    <script src="/js/script.js"></script>
+    <script src="../js/script.js"></script>
   </body>
 </html>
