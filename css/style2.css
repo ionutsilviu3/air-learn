@@ -1,6 +1,3 @@
-
-
-
 .about .row{
     display: flex;
     align-items: center;
@@ -15,7 +12,7 @@
 
 .about.row .image img{
     width:100%;
-    heigth: 0rem;
+    height: 0rem;
 }
 
 .about.row .content{
@@ -58,13 +55,13 @@
 }
 
 .about .box-container .box span{
-    front-size: 1.5rem;
+    font-size: 1.5rem;
     color: var(--light-color);
 
 
 }
 
-.review .box-container{
+.reviews .box-container{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
     gap: 1.5rem;
@@ -72,8 +69,32 @@
     justify-content: center;
 }
 
-.review .box-container .box{
+.reviews .box-container .box{
     border-radius: .5rem;
     padding: 2rem;
     background-color: var(--white);
+    padding-top:1.5rem;
 }
+.reviews .box-container .box p{
+    list-style: 2;
+    font-size: 1.7rem;
+    color: var(--light-color);
+}
+
+
+.reviews .box-container .box .user{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.reviews .box-container .box .user img {
+    height: 5rem;
+    width: 5 rem;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+
+
