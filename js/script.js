@@ -7,7 +7,7 @@ let darkMode = localStorage.getItem('dark-mode');
 
 document.querySelector('#user-btn').onclick = () => {
   profile.classList.toggle('active');
-  searchForm.classList.toggle('active');
+  searchForm.classList.remove('active');
 };
 document.querySelector('#search-btn').onclick = () => {
   searchForm.classList.toggle('active');
@@ -17,11 +17,12 @@ document.querySelector('#menu-btn').onclick = () => {
   sideBar.classList.toggle('active');
   body.classList.toggle('active');
 };
+/*
 document.querySelector('.side-bar .close-side-bar').onclick = () => {
   sideBar.classList.remove('active');
   body.classList.remove('active');
 };
-
+*/
 window.onscroll = () => {
   profile.classList.remove('active');
   searchForm.classList.remove('active');
@@ -31,6 +32,8 @@ window.onscroll = () => {
     body.classList.remove('active');
   }
 };
+
+//dark mode
 
 const enableDarkMode = () => {
   toggleBtn.classList.replace('fa-sun', 'fa-moon');

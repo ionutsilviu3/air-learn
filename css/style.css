@@ -47,7 +47,7 @@ body {
   background-color: var(--light-bg);
   padding-left: 30rem;
 }
-body.dark{
+body.dark {
   --white: #222;
   --black: #fff;
   --light-color: #aaa;
@@ -55,8 +55,7 @@ body.dark{
   --border: 0.1rem solid rgba(255, 255, 255, 0.2);
 }
 
-
-body.active{
+body.active {
   padding-left: 0;
 }
 
@@ -127,6 +126,16 @@ section {
 .flex-btn {
   display: flex;
   gap: 1rem;
+}
+
+/* fourth part */
+.heading {
+  padding-bottom: 1.8rem;
+  border-bottom: var(--border);
+  font-size: 2.5rem;
+  color: var(--black);
+  text-transform: capitalize;
+  margin-bottom: 2rem;
 }
 
 .header {
@@ -215,7 +224,7 @@ section {
   transform-origin: top right;
   transition: 0.2 linear;
 }
-.header .flex .profile .active {
+.header .flex .profile.active {
   transform: scale(1);
   transition: 0.2 linear;
 }
@@ -304,10 +313,10 @@ section {
 .side-bar .navbar a:hover i {
   margin-right: 2.5rem;
 }
-.side-bar.active {
+.side-bar .active {
   left: -31rem;
 }
-.side-bar .active {
+.side-bar.active {
   left: -31rem;
 }
 
@@ -375,5 +384,14 @@ section {
 @media (max-width: 450px) {
   html {
     font-size: 50%;
+  }
+
+  .heading {
+    font-size: 2.5rem;
+  }
+
+  .flex-btn {
+    flex-flow: column;
+    gap: 0;
   }
 }
