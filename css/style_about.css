@@ -17,9 +17,13 @@
 
 .about.row .content{
     flex: 1 1 40rem;
+    text-align: center;
 }
-
 .about.row .content h3{
+    font-size:2.5rem;
+    color: var(--black);
+}
+.about.row .content p{
     line-height: 2;
     font-size: 1.7rem;
     color: var(--light-color);
