@@ -3,8 +3,8 @@
 
 .playlist .row{
     display: flex;
-    align-items: flex-end;
-    gap: 1.5rem;
+    align-items: center;
+    gap: 2.5rem;
     flex-wrap: wrap;
     padding: 2 rem;
     background-color: --white;;
@@ -82,7 +82,28 @@ padding-top: 2rem;
 font-size:2rem;
 color:var(--black);
 }
+.playlist .row .col .details p{
+padding:1rem 0;
+line-height: 2;
+color:var(--light-color);
+font-size: 1.7rem;
+}
+
+.playlist .row .col .details .date{
+    font-size: 1.7rem;
+    padding-top:.5rem;
+
+}
 
 
+.playlist .row .col .details .date i{
+color:var(--main-color);
+margin-right:1rem;
 
 
+}
+
+.playlist .row .col .details .date span{
+    color: var(--light-color);
+
+}
