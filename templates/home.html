@@ -11,7 +11,7 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
     />
 
-    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="/css/style.css" />
   </head>
 
   <body>
@@ -35,10 +35,10 @@
         </form>
 
         <div class="icons">
-          <div id="menu-bts" class="fas fa-bars"></div>
-          <div id="search-bts" class="fas fa-search"></div>
-          <div id="user-bts" class="fas fa-user"></div>
-          <div id="toggle-bts" class="fas fa-sun"></div>
+          <div id="menu-btn" class="fas fa-bars"></div>
+          <div id="search-btn" class="fas fa-search"></div>
+          <div id="user-btn" class="fas fa-user"></div>
+          <div id="toggle-btn" class="fas fa-sun"></div>
         </div>
 
         <div class="profile">
@@ -46,7 +46,7 @@
           <h3>john</h3>
           <span>student</span>
           <a href="profile.html" class="btn">view profile</a>
-          <div class="fle-btn">
+          <div class="flex-btn">
             <a href="login.html" class="option-btn">login</a>
             <a href="register.html" class="option-btn">register</a>
           </div>
@@ -55,6 +55,36 @@
     </header>
     <!-- header starts here -->
 
-    <script src="js/script.js"></script>
+    <!-- side bar section starts here -->
+
+    <div class="side-bad">
+      <div class="profile">
+        <img src="images/pic1.jpg" alt="" />
+        <h3>john</h3>
+        <span>student</span>
+        <a href="profile.html" class="btn">view profile</a>
+
+        <nav class="navbar">
+          <a href="home.html">
+            <i class="fas fa-home"></i><span> Home </span></a
+          >
+          <a href="about.html"
+            ><i class="fas fa-question"></i><span> About Me </span></a
+          >
+          <a href="courses.html"
+            ><i class="fas fa-graduation-cap"></i><span> Courses </span></a
+          >
+          <a href="teachers.html"
+            ><i class="fas fa-chalkboard-user"></i><span> Teachers </span></a
+          >
+          <a href="contact.html"
+            ><i class="fas fa-headset"></i><span> Contact </span></a
+          >
+        </nav>
+      </div>
+    </div>
+    <!-- side bar section starts here -->
+
+    <script src="/js/script.js"></script>
   </body>
 </html>
