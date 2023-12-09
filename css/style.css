@@ -45,6 +45,7 @@ html {
 
 body {
   background-color: var(--light-bg);
+  padding-left: 30rem;
 }
 
 section {
@@ -62,10 +63,54 @@ section {
   border-radius: 0.5rem;
   padding: 1rem 3rem;
   font-size: 1.8rem;
-  color: var(--white);
+  color: #fff;
+  margin-top: 1rem;
   text-transform: capitalize;
   cursor: pointer;
   text-align: center;
+}
+
+.btn,
+.option-btn,
+.delete-btn {
+  display: block;
+  width: 100%;
+}
+
+.inline-btn,
+.inline-option-btn,
+.inline-delete-btn {
+  display: inline-block;
+}
+
+.btn,
+.inline-btn {
+  background-color: var(--main-color);
+}
+
+.btn,
+.inline-option-btn {
+  background-color: var(--orangen);
+}
+
+.btn,
+.inline-delete-btn {
+  background-color: var(--red);
+}
+
+.btn:hover,
+.option-btn:hover,
+.delete-btn:hover,
+.inline-btn:hover,
+.inline-option-btn:hover,
+.inline-delete-btn:hover {
+  background-color: var(--black);
+  color: var(--white);
+}
+
+.flex {
+  display: flex;
+  gap: 1rem;
 }
 
 .header {
@@ -97,7 +142,7 @@ section {
   border-radius: 0.5rem;
   display: flex;
   align-items: center;
-  gap: 1.5rem;
+  gap: 2rem;
   padding: 1.5rem 2rem;
   background-color: var(--light-bg);
 }
@@ -105,12 +150,12 @@ section {
 .header .flex .search-form input {
   width: 100%;
   background: none;
-  font-size: 1.8rem;
+  font-size: 2rem;
   color: var(--black);
 }
 
 .header .flex .search-form button {
-  font-size: 2.5rem;
+  font-size: 2rem;
   color: var(--black);
   cursor: pointer;
   background: none;
@@ -121,7 +166,7 @@ section {
 }
 
 .header .flex .icons div {
-  font-size: 2.5rem;
+  font-size: 2rem;
   color: var(--black);
   border-radius: 0.5rem;
   height: 4.5rem;
@@ -151,6 +196,13 @@ section {
   padding: 2rem;
   text-align: center;
   width: 30rem;
+  transform: scale(0);
+  transform-origin: top right;
+}
+
+.header .flex .profile .active {
+  transform: scale(1);
+  transition: 0.2 linear;
 }
 
 .header .flex .profile img {
@@ -169,4 +221,75 @@ section {
 .header .flex .profile span {
   font-size: 1.6rem;
   color: var(--light-color);
+}
+
+/* second part */
+
+.side-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 0;
+  width: 0;
+  background-color: var(--white);
+  border-right: var(--border);
+}
+
+.side-bar .profile {
+  padding: 3rem 2rem;
+  text-align: center;
+}
+
+.side-bar .profile img {
+  height: 10rem;
+  width: 10rem;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 0.5rem;
+}
+
+.side-bar .profile h3 {
+  font-size: 2rem;
+  color: var(--black);
+}
+.side-bar .profile span {
+  font-size: 1.6rem;
+  color: var(--light-color);
+}
+
+/* media queries */
+
+@media (max-width: 991px) {
+  html {
+    font-size: 55%;
+  }
+}
+
+@media (max-width: 768px) {
+  #search-btn {
+    display: inline-block;
+  }
+
+  .header .flex .search-form {
+    position: absolute;
+    top: 99%;
+    left: 0;
+    right: 0;
+    width: auto;
+    border-top: var(--border);
+    border-bottom: var(--border);
+    background-color: var(--white);
+    clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    transition: 0.2s linear;
+  }
+
+  .header .flex .search-form.active {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+}
+
+@media (max-width: 450px) {
+  html {
+    font-size: 50%;
+  }
 }
