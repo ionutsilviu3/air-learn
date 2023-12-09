@@ -257,6 +257,35 @@ section {
   color: var(--light-color);
 }
 
+.side-bar .navbar {
+  margin-top: 1rem;
+}
+
+.side-bar .navbar a {
+  display: block;
+  padding: 1.5rem;
+  margin: 0.5rem 0;
+  font-size: 1.8rem;
+}
+
+.side-bar .navbar a i {
+  color: var(--main-color);
+  margin-right: 1.5rem;
+  transition: 0.2s linear;
+}
+
+.side-bar .navbar a span {
+  color: var(--light-color);
+}
+
+.side-bar .navbar a:hover {
+  background-color: var(--light-bg);
+}
+
+.side-bar .navbar a:hover i {
+  margin-right: 2.5rem;
+}
+
 /* media queries */
 
 @media (max-width: 991px) {
