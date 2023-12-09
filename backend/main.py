@@ -1,23 +1,72 @@
-from flask import Flask, render_template
+from model import db, Video, Course
+from flask import Flask, render_template, jsonify
 
-app = Flask(__name__)
+app = Flask(__name__, template_folder='../templates', static_folder='static')
 
-# Sample data (replace with your actual data)
-courses = [
-    {"id": 1, "title": "Introduction to Programming", "videos": ["video1.mp4", "video2.mp4"]},
-    {"id": 2, "title": "Web Development Basics", "videos": ["video3.mp4", "video4.mp4"]},
-]
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///airlearn.db'
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False  # Disable modification tracking as it is not needed for this example
 
-@app.route('/')
+db.init_app(app)
+
+# Create tables when the application starts (only for development)
+with app.app_context():
+    db.create_all()
+
+@app.route('/api/videos', methods=['GET'])
+def get_all_videos():
+    new_video = Video.add_video(
+    title='Introduction to Neural Networks',
+    description='Learn the basics of Neural Networks.',
+    thumbnail_url='/images/thumbnail.jpg',
+    video_url='/videos/NeuralNetworks.mp4'
+)
+    
+    videos = Video.query.all()
+    return jsonify([video.serialize() for video in videos])
+   
+@app.route('/') 
+@app.route('/home.html')
 def index():
-    return render_template('index.html', courses=courses)
+    return render_template('home.html')
 
-@app.route('/course/<int:course_id>')
-def course(course_id):
-    course = next((c for c in courses if c["id"] == course_id), None)
-    if course:
-        return render_template('course.html', course=course)
-    return "Course not found", 404
+@app.route('/about.html')
+def about():
+    return render_template("about.html")
+
+@app.route('/courses.html')
+@app.route('/courses')
+def courses():
+    courses_data = Course.query.all()
+    return render_template('courses.html', courses_data=courses_data)
+
 
 if __name__ == '__main__':
+    
+    with app.app_context():
+        # Drop and recreate the tables (for development purposes)
+        db.drop_all()
+        db.create_all()
+
+        # Populate the database with sample data
+        course1 = Course(
+            tutor_image_url='path/to/tutor1_image.jpg',
+            tutor_name='John Doe',
+            tutor_date='21-25-2022',
+            course_thumbnail_url='path/to/course1_thumbnail.jpg',
+            course_title='Complete HTML Tutorial',
+            course_playlist_url='/playlist/course1'
+        )
+        course2 = Course(
+            tutor_image_url='path/to/tutor2_image.jpg',
+            tutor_name='Jane Doe',
+            tutor_date='26-30-2022',
+            course_thumbnail_url='path/to/course2_thumbnail.jpg',
+            course_title='Complete CSS Tutorial',
+            course_playlist_url='/playlist/course2'
+        )
+
+        db.session.add(course1)
+        db.session.add(course2)
+        db.session.commit()
+    
     app.run(debug=True)
