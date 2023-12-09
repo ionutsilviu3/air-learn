@@ -11,16 +11,16 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
     />
 
-    <link rel="stylesheet" href="/static/css/style.css" />
-    <link rel="stylesheet" href="/static/css/style_about.css" />
-    <link rel="stylesheet" href="/static/css/style_courses.css" />
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/style_about.css" />
+    <link rel="stylesheet" href="/css/style_courses.css" />
   </head>
 
   <body>
     <!-- header starts here -->
     <header class="header">
       <section class="flex">
-        <a href="home.html" class="logo"> Air Learn </a>
+        <a href="/templates/home.html" class="logo"> Air Learn </a>
         <form action="" method="post" class="search-form">
           <input
             type="text"
@@ -44,13 +44,13 @@
         </div>
 
         <div class="profile">
-          <img src="/images/download.jpg" alt="" />
+          <img src="/static/images/download.jpg" alt="" />
           <h3>john</h3>
           <span>student</span>
           <a href="profile.html" class="btn">view profile</a>
           <div class="flex-btn">
-            <a href="login.html" class="option-btn">login</a>
-            <a href="register.html" class="option-btn">register</a>
+            <a href="/templates/login.html" class="option-btn">login</a>
+            <a href="/templates/register.html" class="option-btn">register</a>
           </div>
         </div>
       </section>
@@ -65,24 +65,26 @@
 
     <div class="side-bar">
       <div class="profile">
-        <img src="/images/download.jpg" alt="" />
+        <img src="/static/images/download.jpg" alt="" />
         <h3>GATITO</h3>
         <span>student</span>
-        <a href="profile.html" class="btn">view profile</a>
+        <a href="/templates/profile.html" class="btn">view profile</a>
       </div>
 
       <nav class="navbar">
-        <a href="home.html"> <i class="fas fa-home"></i><span>Home</span></a>
-        <a href="about.html"
+        <a href="/templates/home.html">
+          <i class="fas fa-home"></i><span>Home</span></a
+        >
+        <a href="/templates/about.html"
           ><i class="fas fa-question"></i><span>About Us</span></a
         >
-        <a href="courses.html"
+        <a href="/templates/courses.html"
           ><i class="fas fa-graduation-cap"></i><span>Courses</span></a
         >
-        <a href="teachers.html"
+        <a href="/templates/teachers.html"
           ><i class="fas fa-chalkboard-user"></i><span>Teachers</span></a
         >
-        <a href="contact.html"
+        <a href="/templates/contact.html"
           ><i class="fas fa-headset"></i><span> Contact </span></a
         >
       </nav>
@@ -95,7 +97,7 @@
     <section class="about">
       <div class="row">
         <div class="image">
-          <img src="images/about-immg.svg" alt="" />
+          <img src="/static/images/download.jpg" alt="" />
         </div>
 
         <div class="content">
@@ -104,7 +106,7 @@
             Lorem ipsum, dolor sit amet consectetur adipiscing elit. Aliquam
             velit expedita dolorem ut la
           </p>
-          <a href="courses.html" class="inline-btn"> our courses</a>
+          <a href="/templates/courses.html" class="inline-btn"> our courses</a>
         </div>
       </div>
 
@@ -304,6 +306,6 @@
     <!-- footer session ends here -->
 
     <!-- custom js file link -->
-    <script src="/js/script.js"></script>
+    <script src="/static/js/script.js"></script>
   </body>
 </html>
