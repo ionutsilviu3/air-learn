@@ -36,7 +36,7 @@
 }
 
 *::-webkit-scrollbar-thumb {
-  background-color: transparent;
+  background-color: var(--main-color);
 }
 html {
   font-size: 62.5%;
@@ -46,6 +46,10 @@ html {
 body {
   background-color: var(--light-bg);
   padding-left: 30rem;
+}
+
+body.active {
+  padding-left: 0rem;
 }
 
 section {
@@ -88,12 +92,12 @@ section {
   background-color: var(--main-color);
 }
 
-.btn,
+.option-btn,
 .inline-option-btn {
   background-color: var(--orangen);
 }
 
-.btn,
+.delete-btn,
 .inline-delete-btn {
   background-color: var(--red);
 }
@@ -108,7 +112,7 @@ section {
   color: var(--white);
 }
 
-.flex {
+.flex-btn {
   display: flex;
   gap: 1rem;
 }
@@ -143,7 +147,7 @@ section {
   display: flex;
   align-items: center;
   gap: 2rem;
-  padding: 1.5rem 2rem;
+  padding: 1rem 2rem;
   background-color: var(--light-bg);
 }
 
@@ -161,7 +165,7 @@ section {
   background: none;
 }
 
-.header .flex .search-form button::hover {
+.header .flex .search-form button:hover {
   color: var(--main-color);
 }
 
@@ -186,7 +190,6 @@ section {
 #search-btn {
   display: none;
 }
-
 .header .flex .profile {
   position: absolute;
   top: 120%;
@@ -198,13 +201,12 @@ section {
   width: 30rem;
   transform: scale(0);
   transform-origin: top right;
+  transition: 0.2 linear;
 }
-
 .header .flex .profile .active {
   transform: scale(1);
   transition: 0.2 linear;
 }
-
 .header .flex .profile img {
   width: 10rem;
   height: 10rem;
@@ -212,34 +214,49 @@ section {
   object-fit: cover;
   margin-bottom: 0.5rem;
 }
-
 .header .flex .profile h3 {
   font-size: 2rem;
   color: var(--black);
 }
-
 .header .flex .profile span {
-  font-size: 1.6rem;
   color: var(--light-color);
+  font-size: 1.6rem;
 }
-
 /* second part */
-
 .side-bar {
   position: fixed;
   top: 0;
   left: 0;
-  height: 0;
-  width: 0;
+  height: 100vh;
+  width: 30rem;
   background-color: var(--white);
   border-right: var(--border);
+  z-index: 1200;
 }
-
+.side-bar .close-side-bar {
+  text-align: right;
+  padding: 2rem;
+  padding-bottom: 0;
+  display: none;
+}
+.side-bar .close-side-bar i {
+  height: 4.5rem;
+  width: 4.5 rem;
+  line-height: 4.4rem;
+  font-size: 2.5rem;
+  color: #fff;
+  cursor: pointer;
+  background-color: var(--red);
+  text-align: center;
+  border-radius: 0.5rem;
+}
+.side-bar .close-side-bar i:hover {
+  background-color: var(--black);
+}
 .side-bar .profile {
   padding: 3rem 2rem;
   text-align: center;
 }
-
 .side-bar .profile img {
   height: 10rem;
   width: 10rem;
@@ -247,7 +264,6 @@ section {
   object-fit: cover;
   margin-bottom: 0.5rem;
 }
-
 .side-bar .profile h3 {
   font-size: 2rem;
   color: var(--black);
@@ -256,45 +272,78 @@ section {
   font-size: 1.6rem;
   color: var(--light-color);
 }
-
 .side-bar .navbar a {
   display: block;
   padding: 2rem;
   margin: 0.5rem 0;
   font-size: 1.8rem;
 }
-
 .side-bar .navbar a i {
   color: var(--main-color);
   margin-right: 1.5rem;
   transition: 0.2s linear;
 }
-
 .side-bar .navbar a span {
   color: var(--light-color);
 }
-
 .side-bar .navbar a:hover {
   background-color: var(--light-bg);
 }
-
 .side-bar .navbar a:hover i {
   margin-right: 2.5rem;
 }
+.side-bar.active {
+  left: -31rem;
+}
+.side-bar .active {
+  left: -31rem;
+}
+
+/* third part -- no issue */
+.footer {
+  position: sticky;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background-color: var(--white);
+  border-top: var(--border);
+  padding: 2.5rem 2rem;
+  text-align: center;
+  color: var(--black);
+  font-size: 2rem;
+  margin-top: 2rem;
+  z-index: 1000;
+}
+.footer span {
+  color: var(--main-color);
+}
 
 /* media queries */
-
+@media (max-width: 1200px) {
+  body {
+    padding-left: 0;
+  }
+  .side-bar {
+    transition: 0.2 linear;
+    left: -30rem;
+  }
+  .side-bar.active {
+    left: 0;
+    box-shadow: 0 0 0 100vw rgb(0, 0, 0, 0.7);
+  }
+  .side-bar .close-side-bar {
+    display: block;
+  }
+}
 @media (max-width: 991px) {
   html {
     font-size: 55%;
   }
 }
-
 @media (max-width: 768px) {
   #search-btn {
     display: inline-block;
   }
-
   .header .flex .search-form {
     position: absolute;
     top: 99%;
@@ -307,12 +356,10 @@ section {
     clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
     transition: 0.2s linear;
   }
-
   .header .flex .search-form.active {
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
   }
 }
-
 @media (max-width: 450px) {
   html {
     font-size: 50%;
