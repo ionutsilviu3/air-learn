@@ -19,55 +19,39 @@
   <body>
     <!-- header starts here -->
     <header class="header">
-      <section class="contact">
-        <div class="row">
-          <div class="image">
-            <img src="/static/images/upload.jpg" alt="" />
-          </div>
+      <section class="flex">
+        <a href="/templates/home.html" class="logo" id="who"> Air Learn </a>
+        <form action="" method="post" class="search-form">
+          <input
+            type="text"
+            name="search_box"
+            placeholder="search courses..."
+            required
+            maxlength="100"
+          />
+          <button
+            type="submit"
+            class="fas fa-search"
+            name="search_box"
+          ></button>
+        </form>
 
-          <form action="" method="post">
-            <h3>Name for the uploaded document</h3>
-            <input
-              type="text"
-              placeholder=" name of document..."
-              required
-              maxlength="100"
-              name="name_document"
-              class="box"
-            />
-            <h3>Type of the video/lms</h3>
-            <div class="upload-btn-container">
-              <label for="videoUpload" class="upload-btn">
-                Upload Video
-                <input
-                  type="file"
-                  id="videoUpload"
-                  accept="video/*"
-                  name="video_filename"
-                />
-              </label>
-            </div>
-            <h3>Upload the PDF</h3>
-            <div class="upload-btn-container">
-              <label for="pdfUpload" class="upload-btn">
-                Upload PDF
-                <input
-                  type="file"
-                  id="pdfUpload"
-                  accept=".pdf,application/pdf"
-                  name="pdf_filename"
-                />
-              </label>
-            </div>
-            <div class="upload-btn-container2">
-              <input
-                type="submit"
-                value="Upload"
-                class="inline-btn"
-                name="submit_document"
-              />
-            </div>
-          </form>
+        <div class="icons">
+          <div id="menu-btn" class="fas fa-bars"></div>
+          <div id="search-btn" class="fas fa-search"></div>
+          <div id="user-btn" class="fas fa-user"></div>
+          <div id="toggle-btn" class="fas fa-sun"></div>
+        </div>
+
+        <div class="profile">
+          <img src="/static/images/student.jpg" alt="" />
+          <h3>Stoian Mihnea</h3>
+          <span>student</span>
+          <a href="/templates/profile.html" class="btn">view profile</a>
+          <div class="flex-btn">
+            <a href="/templates/login.html" class="option-btn">login</a>
+            <a href="/templates/register.html" class="option-btn">register</a>
+          </div>
         </div>
       </section>
     </header>
