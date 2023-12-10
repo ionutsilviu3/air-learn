@@ -44,8 +44,9 @@
         </div>
 
         <div class="profile">
-          <img src="/static/images/download.jpg" alt="" />
-          <h3>john</h3>
+
+          <img src="/static/images/student.jpg" alt="" />
+          <h3>Stoian Mihnea</h3>
           <span>student</span>
           <a href="profile.html" class="btn">view profile</a>
           <div class="flex-btn">
@@ -65,8 +66,8 @@
 
     <div class="side-bar">
       <div class="profile">
-        <img src="/static/images/download.jpg" alt="" />
-        <h3>GATITO</h3>
+        <img src="/static/images/student.jpg" alt="" />
+        <h3>Stoian Mihnea</h3>
         <span>student</span>
         <a href="/templates/profile.html" class="btn">view profile</a>
       </div>
@@ -97,7 +98,7 @@
     <section class="contact">
       <div class="row">
         <div class="image">
-          <img src="/static/images/download.jpg" alt="" />
+          <img src="/static/images/upload.jpg" alt="" />
         </div>
 
         <form action="" method="post">
@@ -111,15 +112,23 @@
             class="box"
           />
           <h3>Type of the video/lms</h3>
-          <input type="file" id="myFile" name="filename">
+          <label for="videoUpload" class="upload-btn">
+            <span class="upload-btn-text">Upload Video</span>
+            <input type="file" id="videoUpload" accept="video/*" name="video_filename">
+          </label>
           <h3>Upload the PDF</h3>
-          <input type="file" id="myFile" name="filename">
+          <label for="pdfUpload" class="upload-btn">
+            <span class="upload-btn-text">Upload PDF</span>
+            <input type="file" id="pdfUpload" accept=".pdf,application/pdf" name="pdf_filename">
+          </label>
+          <div class="xes">
           <input
             type="submit"
             value="Upload"
             class="inline-btn"
             name="submit_document"
           />
+        </div>
         </form>
       </div>
       </div>

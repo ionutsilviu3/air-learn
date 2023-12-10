@@ -4,21 +4,22 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>About</title>
-
+    <title>video</title>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
     />
-
+    <!-- Add your CSS and external libraries here -->
     <link rel="stylesheet" href="/static/css/style.css" />
-  </head>
+    <link rel="stylesheet" href="/static/css/video.css" />
 
+    <!--<link rel="stylesheet" href="/static/css/video.css">-->
+  </head>
   <body>
     <!-- header starts here -->
     <header class="header">
       <section class="flex">
-        <a href="/templates/home.html" class="logo"> Air Learn </a>
+        <a href="/templates/home.html" class="logo" id="who"> Air Learn </a>
         <form action="" method="post" class="search-form">
           <input
             type="text"
@@ -43,9 +44,9 @@
 
         <div class="profile">
           <img src="/static/images/student.jpg" alt="" />
-          <h3>Mihnea Stoian</h3>
+          <h3>Stoian Mihnea</h3>
           <span>student</span>
-          <a href="profile.html" class="btn">view profile</a>
+          <a href="/templates/profile.html" class="btn">view profile</a>
           <div class="flex-btn">
             <a href="/templates/login.html" class="option-btn">login</a>
             <a href="/templates/register.html" class="option-btn">register</a>
@@ -87,68 +88,65 @@
         >
       </nav>
     </div>
-
     <!-- side bar section starts here -->
 
-    <!-- Register starts here -->
+    <!-- Main content section -->
+    <section class="main-content">
+      <!-- Video Player -->
+      <div style="color: var(--black); margin-top: 50px; margin-bottom: 10px">
+        <h1 style="font-size: 2.5rem">Titlu</h1>
+        <h3 style="font-size: 1.5rem">autor</h3>
+      </div>
+      <div class="video-player">
+        <!-- You can use an HTML5 video tag or embed a video player here -->
+        <!-- Example using HTML5 video tag -->
+        <video width="640" height="360" controls>
+          <source src="/static/videos/NeuralNetworks.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+      </div>
 
-    <section class="form-container">
-      <form action="" method="post" enctype="multipart/form-data">
-        <h3>Register new account</h3>
-        <p>Your Name<span>*</span></p>
-        <input
-          type="text"
-          name="name"
-          placeholder="your full name..."
-          maxlength="100"
-          class="box"
-          required
+      <!-- PDF Reader -->
+      <div class="pdf-reader">
+        <!-- You can use a PDF embed or viewer here -->
+        <!-- Example using an embed tag -->
+        <embed
+          src="/static/smth.pdf"
+          type="application/pdf"
+          width="100%"
+          height="600px"
         />
-        <p>Your Email<span>*</span></p>
-        <input
-          type="email"
-          name="email"
-          placeholder="your email address..."
-          maxlength="100"
+        <!-- If PDF doesn't exist, show some text -->
+        <p class="no-pdf-text">No PDF available.</p>
+      </div>
+    </section>
+
+    <section class="contact">
+      <h1 class="heading">add comment</h1>
+      <form action="" method="post" class="add-comment">
+        <textarea
+          name="msg"
           class="box"
+          placeholder=" message..."
           required
-        />
-        <p>Your New Password<span>*</span></p>
+          cols="150"
+          rows="15"
+        ></textarea>
         <input
-          type="password"
-          name="new_pass"
-          placeholder="enter your new password"
-          maxlength="100"
-          class="box"
-          required
+          type="submit"
+          value="send message"
+          class="inline-btn"
+          name="submit"
         />
-        <p>Confirm Password<span>*</span></p>
-        <input
-          type="password"
-          name="c_pass"
-          placeholder="confirm your password"
-          maxlength="100"
-          class="box"
-          required
-        />
-        <p>Select Pic<span>*</span></p>
-        <input type="file" name="image" accept="image/*" required class="box" />
-        <input type="submit" name="submit" value="Create now" class="btn" />
       </form>
     </section>
 
-    <!-- Register ends here -->
-
     <!-- footer session starts here -->
-
     <footer class="footer">
       &copy; copyrights @ 2023 by <span> Boanc Ionut </span> | All rights are
       reserved !
     </footer>
-
     <!-- footer session ends here -->
-
-    <!-- custom js file link -->
     <script src="/static/js/script.js"></script>
   </body>
 </html>
