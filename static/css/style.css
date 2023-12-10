@@ -1,9 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@1,6..12,500&display=swap');
 
 :root {
-  --main-color: #8e44ad;
+  --main-color: #033C89;
   --red: #e74c3c;
-  --orangen: #f39c12;
+  --orangen: #FF914D;
   --white: #fff;
   --black: #2c3e50;
   --light-color: #888;
@@ -156,10 +156,20 @@ section {
   justify-content: space-between;
 }
 
-.header .flex .logo {
-  font-size: 2.5rem;
-  color: var(--black);
-  font-weight: bolder;
+.header .flex .logo img {
+  height: 8rem;
+  width: 8rem;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 0.5rem;
+  margin-left: 0.5rem;
+}
+.logo img {
+  height: 2rem;
+  width: 2rem;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 0.5rem;
 }
 
 .header .flex .search-form {
@@ -899,3 +909,71 @@ section {
   font-size: 2rem;
 }
 
+/* update profile css */
+.form-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: calc(100vh - 20rem);
+}
+.form-container form {
+  background-color: var(--white);
+  border-radius: 0.5rem;
+  padding: 2rem;
+  width: 50rem;
+}
+.form-container form h3 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+.form-container form p {
+  padding-top: 1rem;
+  font-size: 1.7rem;
+  color: var(--light-color);
+}
+.form-container form p span {
+  color: var(--red);
+}
+.form-container form .box {
+  width: 100%;
+  border-radius: 0.5rem;
+  margin: 1rem 0;
+  font-size: 1.8rem;
+  color: var(--black);
+  padding: 1.4rem;
+  background-color: var(--light-bg);
+}
+
+/* css from ELENA with the uploads */
+/* Target the file input elements */
+input[type='file'] {
+  display: none; /* Hide the default file input */
+}
+
+/* Style for the upload button */
+.upload-btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #3498db;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.upload-btn .box-container2 {
+  display: block;
+  margin: 0 auto;
+  padding: 10px 20px;
+}
+
+/* Style for the upload button text */
+.upload-btn-text {
+  font-size: 16px;
+}
+
+/* Style for the upload button hover state */
+.upload-btn:hover {
+  background-color: #2980b9;
+}
