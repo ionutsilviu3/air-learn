@@ -130,7 +130,7 @@ section {
 
 /* fourth part */
 .heading {
-  padding-bottom: 1.8rem;
+  padding-bottom: 2rem;
   border-bottom: var(--border);
   font-size: 2.5rem;
   color: var(--black);
@@ -320,54 +320,45 @@ section {
 }
 
 /* partea 4.2 */
-
 .quick-select .box-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(27.5rem, 1fr));
   gap: 1.5rem;
   align-items: flex-start;
   justify-content: center;
 }
-
 .quick-select .box-container .box {
   border-radius: 0.5rem;
   background-color: var(--white);
   padding: 2rem;
 }
-
 .quick-select .box-container .box .title {
   font-size: 2rem;
   color: var(--black);
 }
-
 .quick-select .box-container .box p {
   line-height: 1.5;
   padding-top: 1.5rem;
   color: var(--light-color);
-  font-size: 1.7rem;
+  font-size: 1.8rem;
 }
-
 .quick-select .box-container .box p span {
   color: var(--main-color);
 }
-
 .quick-select .box-container .tutor {
   text-align: center;
 }
-
 .quick-select .box-container .tutor p {
   padding: 1rem;
 }
-
 .quick-select .box-container .box .flex {
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
   padding-top: 2rem;
 }
-
 .quick-select .box-container .box .flex a {
-  padding-top: 1.5rem;
+  padding: 1rem 1.5rem;
   border-radius: 0.5rem;
   font-size: 1.6rem;
   background-color: var(--light-bg);
@@ -384,6 +375,9 @@ section {
   background-color: var(--black);
 }
 .quick-select .box-container .box .flex a:hover i {
+  background-color: var(--white);
+}
+.quick-select .box-container .box .flex a:hover span {
   background-color: var(--white);
 }
 
@@ -939,4 +933,37 @@ section {
   color: var(--black);
   padding: 1.4rem;
   background-color: var(--light-bg);
+}
+
+/* css from ELENA with the uploads */
+/* Target the file input elements */
+input[type='file'] {
+  display: none; /* Hide the default file input */
+}
+
+/* Style for the upload button */
+.upload-btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #3498db;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.upload-btn .box-container2 {
+  display: block;
+  margin: 0 auto;
+  padding: 10px 20px;
+}
+
+/* Style for the upload button text */
+.upload-btn-text {
+  font-size: 16px;
+}
+
+/* Style for the upload button hover state */
+.upload-btn:hover {
+  background-color: #2980b9;
 }
