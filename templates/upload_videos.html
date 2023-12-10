@@ -3,8 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>About</title>
+    <meta name="viewport" content="width=device-width, inital-scale=1.0" />
+    <title>homme</title>
 
     <link
       rel="stylesheet"
@@ -12,6 +12,8 @@
     />
 
     <link rel="stylesheet" href="/static/css/style.css" />
+    <link rel="stylesheet" href="/static/css/style_about.css" />
+    <link rel="stylesheet" href="/static/css/style_playlist.css" />
   </head>
 
   <body>
@@ -42,8 +44,9 @@
         </div>
 
         <div class="profile">
+
           <img src="/static/images/student.jpg" alt="" />
-          <h3>Mihnea Stoian</h3>
+          <h3>Stoian Mihnea</h3>
           <span>student</span>
           <a href="profile.html" class="btn">view profile</a>
           <div class="flex-btn">
@@ -90,54 +93,48 @@
 
     <!-- side bar section starts here -->
 
-    <!-- Register starts here -->
+    <!-- contacts start here -->
 
-    <section class="form-container">
-      <form action="" method="post" enctype="multipart/form-data">
-        <h3>Register new account</h3>
-        <p>Your Name<span>*</span></p>
-        <input
-          type="text"
-          name="name"
-          placeholder="your full name..."
-          maxlength="100"
-          class="box"
-          required
-        />
-        <p>Your Email<span>*</span></p>
-        <input
-          type="email"
-          name="email"
-          placeholder="your email address..."
-          maxlength="100"
-          class="box"
-          required
-        />
-        <p>Your New Password<span>*</span></p>
-        <input
-          type="password"
-          name="new_pass"
-          placeholder="enter your new password"
-          maxlength="100"
-          class="box"
-          required
-        />
-        <p>Confirm Password<span>*</span></p>
-        <input
-          type="password"
-          name="c_pass"
-          placeholder="confirm your password"
-          maxlength="100"
-          class="box"
-          required
-        />
-        <p>Select Pic<span>*</span></p>
-        <input type="file" name="image" accept="image/*" required class="box" />
-        <input type="submit" name="submit" value="Create now" class="btn" />
-      </form>
+    <section class="contact">
+      <div class="row">
+        <div class="image">
+          <img src="/static/images/upload.jpg" alt="" />
+        </div>
+
+        <form action="" method="post">
+          <h3>Name for the uploaded document</h3>
+          <input
+            type="text"
+            placeholder=" name of document..."
+            required
+            maxlength="100"
+            name="name_document"
+            class="box"
+          />
+          <h3>Type of the video/lms</h3>
+          <label for="videoUpload" class="upload-btn">
+            <span class="upload-btn-text">Upload Video</span>
+            <input type="file" id="videoUpload" accept="video/*" name="video_filename">
+          </label>
+          <h3>Upload the PDF</h3>
+          <label for="pdfUpload" class="upload-btn">
+            <span class="upload-btn-text">Upload PDF</span>
+            <input type="file" id="pdfUpload" accept=".pdf,application/pdf" name="pdf_filename">
+          </label>
+          <div class="xes">
+          <input
+            type="submit"
+            value="Upload"
+            class="inline-btn"
+            name="submit_document"
+          />
+        </div>
+        </form>
+      </div>
+      </div>
     </section>
 
-    <!-- Register ends here -->
+    <!-- contacts ends here -->
 
     <!-- footer session starts here -->
 

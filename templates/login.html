@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+
+    <link rel="stylesheet" href="/static/css/style.css" />
+  </head>
+
+  <body>
+    <!-- header starts here -->
+    <header class="header">
+      <section class="flex">
+        <a href="/templates/home.html" class="logo"> Air Learn </a>
+        <form action="" method="post" class="search-form">
+          <input
+            type="text"
+            name="search_box"
+            placeholder="search courses..."
+            required
+            maxlength="100"
+          />
+          <button
+            type="submit"
+            class="fas fa-search"
+            name="search_box"
+          ></button>
+        </form>
+
+        <div class="icons">
+          <div id="menu-btn" class="fas fa-bars"></div>
+          <div id="search-btn" class="fas fa-search"></div>
+          <div id="user-btn" class="fas fa-user"></div>
+          <div id="toggle-btn" class="fas fa-sun"></div>
+        </div>
+
+        <div class="profile">
+          <img src="/static/images/student.jpg" alt="" />
+          <h3>Stoian Mihnea</h3>
+          <span>student</span>
+          <a href="profile.html" class="btn">view profile</a>
+          <div class="flex-btn">
+            <a href="/templates/login.html" class="option-btn">login</a>
+            <a href="/templates/register.html" class="option-btn">register</a>
+          </div>
+        </div>
+      </section>
+    </header>
+    <!-- header ends here -->
+
+    <!-- side bar section starts here -->
+
+    <div class="close-side-bar">
+      <i class="fas fa-time"></i>
+    </div>
+
+    <div class="side-bar">
+      <div class="profile">
+        <img src="/static/images/student.jpg" alt="" />
+        <h3>Stoian Mihnea</h3>
+        <span>student</span>
+        <a href="/templates/profile.html" class="btn">view profile</a>
+      </div>
+
+      <nav class="navbar">
+        <a href="/templates/home.html">
+          <i class="fas fa-home"></i><span>Home</span></a
+        >
+        <a href="/templates/about.html"
+          ><i class="fas fa-question"></i><span>About Us</span></a
+        >
+        <a href="/templates/courses.html"
+          ><i class="fas fa-graduation-cap"></i><span>Courses</span></a
+        >
+        <a href="/templates/teachers.html"
+          ><i class="fas fa-chalkboard-user"></i><span>Teachers</span></a
+        >
+        <a href="/templates/contact.html"
+          ><i class="fas fa-headset"></i><span> Contact </span></a
+        >
+      </nav>
+    </div>
+
+    <!-- side bar section starts here -->
+
+    <!-- Login starts here -->
+
+    <section class="form-container">
+      <form action="" method="post">
+        <h3>Welcome back</h3>
+        <p>Your Email<span>*</span></p>
+        <input
+          type="email"
+          name="email"
+          placeholder="your email address..."
+          maxlength="100"
+          class="box"
+          required
+        />
+        <p>Your Password<span>*</span></p>
+        <input
+          type="password"
+          name="passwo"
+          placeholder="enter your password"
+          maxlength="100"
+          class="box"
+          required
+        />
+        <input type="submit" name="submit" value="Login now" class="btn" />
+      </form>
+    </section>
+
+    <!-- Login ends here -->
+
+    <!-- footer session starts here -->
+
+    <footer class="footer">
+      &copy; copyrights @ 2023 by <span> Boanc Ionut </span> | All rights are
+      reserved !
+    </footer>
+
+    <!-- footer session ends here -->
+
+    <!-- custom js file link -->
+    <script src="/static/js/script.js"></script>
+  </body>
+</html>
