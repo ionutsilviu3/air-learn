@@ -482,7 +482,7 @@ section {
 }
 
 .reviews .box-container .box {
-  border-radius: 0.5rem;
+  border-radius: .5rem;
   padding: 2rem;
   background-color: var(--white);
   padding-top: 1.5rem;
