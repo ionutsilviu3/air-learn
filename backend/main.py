@@ -1,7 +1,7 @@
 from model import db, Video, Course
 from flask import Flask, render_template, jsonify
 
-app = Flask(__name__, template_folder='../templates', static_folder='../images')
+app = Flask(__name__, template_folder='../templates', static_folder='../static')
 
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///airlearn.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False  # Disable modification tracking as it is not needed for this example
@@ -25,16 +25,15 @@ def get_all_videos():
     return jsonify([video.serialize() for video in videos])
    
 @app.route('/') 
-@app.route('/home.html')
+@app.route('/templates/home.html')
 def index():
     return render_template('home.html')
 
-@app.route('/about.html')
+@app.route('/templates/about.html')
 def about():
     return render_template("about.html")
 
-@app.route('/courses.html')
-@app.route('/courses')
+@app.route('/templates/courses.html')
 def courses():
     courses_data = Course.query.all()
     return render_template('courses.html', courses_data=courses_data)
@@ -49,10 +48,10 @@ if __name__ == '__main__':
 
         # Populate the database with sample data
         course1 = Course(
-            tutor_image_url='download.jpg',
+            tutor_image_url='../static/images/download.jpg',
             tutor_name='Costel Aldea',
             tutor_date='21-11-2023',
-            course_thumbnail_url='thumbnail.jpg',
+            course_thumbnail_url='../static/images/thumbnail.jpg',
             course_title='Complete HTML Tutorial',
             course_playlist_url='/playlist/course1'
         )
