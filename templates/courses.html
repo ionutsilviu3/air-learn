@@ -57,36 +57,28 @@
 
     <!-- header ends here -->
 
+    <!-- Courses section -->
     <section class="courses">
       <h1 class="heading">Our Courses</h1>
       <div class="box-container">
-        {% for course in courses_data %}
-        <div class="box">
-          <div class="tutor">
-            <img src="{{ course.tutor_image_url }}" alt="Tutor Image" />
-            <div>
-              <h3>{{ course.tutor_name }}</h3>
-              <span>{{ course.tutor_date }}</span>
-            </div>
+          {% for course in courses_data %}
+          <div class="box">
+              <div class="tutor">
+                <h1 class="title">{{ course.course_title }}</h1>
+                  <div>
+                      <h2>{{ course.professor_name }}</h2>
+                  </div>
+                <img src="{{ course.thumbnail_path }}" class="thumb" alt="Course Thumbnail">
+              </div>
+              
           </div>
-          <img
-            src="{{ course.course_thumbnail_url }}"
-            class="thumb"
-            alt="Course Thumbnail"
-          />
-          <h3 class="title">{{ course.course_title }}</h3>
-          <a href="{{ course.course_playlist_url }}" class="inline-btn"
-            >View Playlist</a
-          >
-        </div>
-        {% endfor %}
+          {% endfor %}
       </div>
       <div class="more-btn">
-        <a href="/templates/courses.html" class="inline-option-btn"
-          >View More</a
-        >
+          <!-- Add a link to view more courses if needed -->
       </div>
-    </section>
+  </section>
+
 
     <!-- footer session starts here -->
 
